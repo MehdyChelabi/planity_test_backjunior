@@ -1,1 +1,1 @@
-# planity_test_backjunior
+# Backend Junior test
