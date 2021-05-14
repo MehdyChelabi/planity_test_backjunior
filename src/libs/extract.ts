@@ -1,14 +1,13 @@
 import util from "util";
 import request from "request";
 
-// didn't know if i can use axios for this test so i used 'request'
-const requestToPromise = util.promisify(request);
-
 const informations_url = process.env.informations_url;
 const jobs_url = process.env.jobs_url;
 const user_url = process.env.user_url;
 
 async function run() {
+  // didn't know if i can use axios for this test so i used 'request'
+  const requestToPromise = util.promisify(request);
   // Call all sources in parallel to gain in processing time
 
   try {

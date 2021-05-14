@@ -8,10 +8,10 @@ async function save(objects) {
 }
 
 async function uploadToJsonBox(objects) {
-  let finalArray = [];
+  let finalArray: Array<any> = [];
   // stucture the final datas to upload
   for (const [key, value] of Object.entries(objects)) {
-    let tmp = Object.assign({ id: key }, value);
+    let tmp: object = Object.assign({ id: key }, value);
     finalArray.push(tmp);
   }
   //   console.log(finalArray);

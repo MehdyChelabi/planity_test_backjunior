@@ -5,8 +5,9 @@ async function storeToLocalFs(filename, content) {
 }
 
 const save = async function(results) {
-  var tabResults = Object.entries(results);
+  var tabResults: Array<any> = Object.entries(results);
   for (const [key, value] of tabResults) {
+    // for each informations, jobs, users
     try {
       await storeToLocalFs(key, value);
       console.info(`✅  Successfully save ${key}`);
