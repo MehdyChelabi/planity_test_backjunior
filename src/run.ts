@@ -1,6 +1,7 @@
 import extract from "./libs/extract.js";
 import backup from "./libs/backup.js";
 import sanitize from "./libs/sanitize.js";
+import store from "./libs/store.js";
 
 const start = async () => {
   // run extracts and retrieve all results
@@ -10,7 +11,11 @@ const start = async () => {
   await backup.save(results);
   // sanitize datas to match with the expect result
   const sanitizeDatas = await sanitize.run(results);
-  console.log(sanitizeDatas);
+  // console.log(sanitizeDatas);
+  // save the results locally
+  await store.save(sanitizeDatas);
+  // post the results to jsonBox
+  await store.uploadToJsonBox(sanitizeDatas);
 };
 
 start();
